@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.4.1)
+  - NMapsMap (3.11.0)
+  - SwiftyJSON (5.0.0)
+  - Then (2.7.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - NMapsMap
+  - SwiftyJSON
+  - Then
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - NMapsMap
+    - SwiftyJSON
+    - Then
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  NMapsMap: e6dbea85c2c195c7532deb637a5e90fd70f94fed
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+
+PODFILE CHECKSUM: e82a62d4cb2ca5dcd2e96840391a39a7d9f6a039
+
+COCOAPODS: 1.10.1
