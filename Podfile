@@ -8,6 +8,7 @@ target 'Yasty_ios' do
   pod 'Then'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'KakaoSDK'
   # Pods for Yasty_ios
 
 end

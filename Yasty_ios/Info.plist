@@ -2,6 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>KAKAO_APP_KEY</key>
+	<string>d5753e44953f980ab57809e0c191b37f
+</string>
 	<key>NMFClientId</key>
 	<string>q8bafk9xha</string>
 	<key>CFBundleDevelopmentRegion</key>
