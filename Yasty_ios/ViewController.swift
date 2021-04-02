@@ -22,17 +22,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let mapView = NMFNaverMapView()
     
     
-    ////
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         attribute()
         layout()
         myLocation()
         //위치 권한 설정 확인
-
         
-
-             
     }
     
     
@@ -45,23 +42,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             $0.showIndoorLevelPicker = true
         }
     }
-    
-//    @IBAction func respondToSwitch(_ sender: UISwitch) {
-//            switch sender.tag {
-//            case 0: // compass
-//                mapView.showCompass = sender.isOn
-//            case 1: // scale
-//                mapView.showScaleBar = sender.isOn
-//            case 2: // zoom
-//                mapView.showZoomControls = sender.isOn
-//            case 3: // indoor
-//                mapView.showIndoorLevelPicker = sender.isOn
-//            case 4: // location
-//                mapView.showLocationButton = sender.isOn
-//            default:
-//                break
-//            }
-//        }
     
     
     
@@ -134,5 +114,4 @@ extension ViewController: UITextFieldDelegate {
         self.present(mapSearchVC, animated: false)
     }
 }
-
 
