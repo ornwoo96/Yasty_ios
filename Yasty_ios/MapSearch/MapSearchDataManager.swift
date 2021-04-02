@@ -39,8 +39,8 @@ class MapSearchDataManager {
                     let resultList = json["documents"]
                     for i in 0..<resultList.count {
                         let resultItem = TempKeywordResult(name: resultList[i]["place_name"].string ?? "",
-                                                           x: resultList[i]["x"].int ?? 0,
-                                                           y: resultList[i]["y"].int ?? 0)
+                                                           x: Double(resultList[i]["x"].string ?? "") ?? 0.0,
+                                                           y: Double(resultList[i]["y"].string ?? "") ?? 0.0)
                         if resultItem.name.isEmpty {
                     // 비어있음
                         } else {

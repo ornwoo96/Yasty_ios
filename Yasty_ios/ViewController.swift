@@ -8,13 +8,18 @@
 import UIKit
 import Then
 import NMapsMap
+import CoreLocation
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    let mapView = NMFMapView()
+    //위치 매니저 변수
+    var locationManager: CLLocationManager!
+    
+    //let mapView2 = NMFMapView()
     let searchTextField = UITextField()
     let paddingView = UIView()
+    let mapView = NMFNaverMapView()
     
     
     ////
@@ -22,7 +27,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         attribute()
         layout()
+        myLocation()
+        //위치 권한 설정 확인
+
+        
+
+             
     }
+    
+    
+    func myLocation() {
+        mapView.do {
+            $0.showCompass = true
+            $0.showLocationButton = true
+            $0.showCompass = true
+            $0.showScaleBar = true
+            $0.showIndoorLevelPicker = true
+        }
+    }
+    
+//    @IBAction func respondToSwitch(_ sender: UISwitch) {
+//            switch sender.tag {
+//            case 0: // compass
+//                mapView.showCompass = sender.isOn
+//            case 1: // scale
+//                mapView.showScaleBar = sender.isOn
+//            case 2: // zoom
+//                mapView.showZoomControls = sender.isOn
+//            case 3: // indoor
+//                mapView.showIndoorLevelPicker = sender.isOn
+//            case 4: // location
+//                mapView.showLocationButton = sender.isOn
+//            default:
+//                break
+//            }
+//        }
+    
+    
+    
     
     func attribute() {
         paddingView.do {
@@ -91,6 +133,6 @@ extension ViewController: UITextFieldDelegate {
         // 프레젠트
         self.present(mapSearchVC, animated: false)
     }
-    
 }
+
 

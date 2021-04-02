@@ -13,6 +13,8 @@ class MapSearchViewController: UIViewController {
     let paddingView = UIView()
     let searchResultTableView = UITableView()
     var searchList: [TempKeywordResult] = []
+    let backButton = UIButton()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +50,21 @@ class MapSearchViewController: UIViewController {
             $0.delegate = self
             $0.dataSource = self
         }
+        backButton.do {
+            // sf symbols 에서 보고 사용한 아이콘의 색 지정
+            $0.tintColor = .black
+            // sf symbols icon 지정
+            $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+            // 스위프트의 클릭리스너
+            $0.addTarget(self , action: #selector(backButtonDipTap), for: .touchUpInside)
+            
+        }
     }
     
+    
+    
     func layout() {
-        [ searchTextField, searchResultTableView ].forEach { view.addSubview($0) }
+        [ searchTextField, searchResultTableView, backButton].forEach { view.addSubview($0) }
         
         searchTextField.do {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +72,8 @@ class MapSearchViewController: UIViewController {
             //세이프에이리어 개념
             $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
             //왼쪽
-            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+            //백버튼 옆에 촥 달라 붙게 된다. backButton.trailingAnchor
+            $0.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 10).isActive = true
             //오른쪽
             $0.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
             //높이
@@ -72,6 +86,20 @@ class MapSearchViewController: UIViewController {
             $0.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
             $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         }
+        
+        backButton.do {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.centerYAnchor.constraint(equalTo: searchTextField.centerYAnchor).isActive = true
+            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        }
+    }
+    @objc func backButtonDipTap() {
+        //뒤로가기
+        //present 일때만 dismiss 이다
+        //
+        self.dismiss(animated: false)
     }
 }
 
@@ -92,9 +120,6 @@ extension MapSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchList.count
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(searchList[indexPath.row])
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -103,5 +128,10 @@ extension MapSearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         searchTextField.endEditing(true)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchResult = SearchResultViewcontroller()
+        searchResult.receiveList = searchList
+        self.present(searchResult, animated: true)
     }
 }

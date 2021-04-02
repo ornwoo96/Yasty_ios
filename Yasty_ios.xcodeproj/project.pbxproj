@@ -20,6 +20,7 @@
 		0BF15229260F9DCD00134495 /* RegionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF15228260F9DCD00134495 /* RegionInfo.swift */; };
 		0BF1522C260F9DDE00134495 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1522B260F9DDE00134495 /* Documents.swift */; };
 		0BF1522F260F9DFA00134495 /* TempKeywordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1522E260F9DFA00134495 /* TempKeywordResult.swift */; };
+		0BF152552617566C00134495 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF152542617566C00134495 /* SearchResultViewController.swift */; };
 		E07832FF5B7251240A8CD11A /* Pods_Yasty_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2926C0AA5BA16B6A8F75FE50 /* Pods_Yasty_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		0BF15228260F9DCD00134495 /* RegionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionInfo.swift; sourceTree = "<group>"; };
 		0BF1522B260F9DDE00134495 /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
 		0BF1522E260F9DFA00134495 /* TempKeywordResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempKeywordResult.swift; sourceTree = "<group>"; };
+		0BF152542617566C00134495 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		2926C0AA5BA16B6A8F75FE50 /* Pods_Yasty_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yasty_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29629C89DC366F10F3724349 /* Pods-Yasty_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.release.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.release.xcconfig"; sourceTree = "<group>"; };
 		D2925DE00873A1EBBFFA6689 /* Pods-Yasty_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.debug.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		0BF151E7260C99D000134495 /* Yasty_ios */ = {
 			isa = PBXGroup;
 			children = (
+				0BF152532617561300134495 /* SearchResultMapView */,
 				0BF15220260F9D7D00134495 /* Entity */,
 				0BF15218260F8DC300134495 /* MapSearch */,
 				0BF151E8260C99D000134495 /* AppDelegate.swift */,
@@ -109,6 +112,14 @@
 				0BF1522E260F9DFA00134495 /* TempKeywordResult.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		0BF152532617561300134495 /* SearchResultMapView */ = {
+			isa = PBXGroup;
+			children = (
+				0BF152542617566C00134495 /* SearchResultViewController.swift */,
+			);
+			path = SearchResultMapView;
 			sourceTree = "<group>";
 		};
 		5A45E50AED5343147DD72775 /* Frameworks */ = {
@@ -250,6 +261,7 @@
 				0BF15226260F9DB800134495 /* KeywordResultMeta.swift in Sources */,
 				0BF1521A260F8DD600134495 /* MapSearchViewController.swift in Sources */,
 				0BF151E9260C99D000134495 /* AppDelegate.swift in Sources */,
+				0BF152552617566C00134495 /* SearchResultViewController.swift in Sources */,
 				0BF1522C260F9DDE00134495 /* Documents.swift in Sources */,
 				0BF151EB260C99D000134495 /* SceneDelegate.swift in Sources */,
 			);
