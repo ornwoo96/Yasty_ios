@@ -12,15 +12,20 @@ import CoreLocation
 
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-    
     //위치 매니저 변수
     var locationManager: CLLocationManager!
+    
     
     //let mapView2 = NMFMapView()
     let searchTextField = UITextField()
     let paddingView = UIView()
     let mapView = NMFNaverMapView()
+    let freeButton = UIButton()
+    let mapView2 = NMFMapView()
     
+    //위도와 경도
+    var latitude: Double?
+    var longitude: Double?
     
     //
     override func viewDidLoad() {
@@ -28,23 +33,64 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         attribute()
         layout()
         myLocation()
-        //위치 권한 설정 확인
         
+        let pathOverlay = NMFPath()
+        pathOverlay.path = NMGLineString(points: [
+            NMGLatLng(lat: 37.57152, lng: 126.97714),
+            NMGLatLng(lat: 37.56607, lng: 126.98268),
+            NMGLatLng(lat: 37.56445, lng: 126.97707),
+            NMGLatLng(lat: 37.55855, lng: 126.97822)
+        ])
+        
+        pathOverlay.mapView = mapView2
+        
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization() // when in use auth로 요청 등록
+        //위치 권한 설정 확인
+//        //locationManager 인스턴스 생성 및 델리게이트 생성
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//
+//        //포그라운드 상태에서 위치 추적 권한 요청
+//        locationManager.requestWhenInUseAuthorization()
+//
+//        //배터리에 맞게 권장되는 최적의 정확도
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//
+//        //위치업데이트
+//        locationManager.startUpdatingLocation()
+//
+//        //위도 경도 가져오기
+//        let coor = locationManager.location?.coordinate
+//        latitude = coor?.latitude
+//        longitude = coor?.longitude
+                
     }
-    
+    // state
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        case .restricted, .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .denied:
+            print("qkqh")
+        @unknown default:
+            return
+        }
+    }
     
     func myLocation() {
         mapView.do {
             $0.showCompass = true
-            $0.showLocationButton = true
             $0.showCompass = true
             $0.showScaleBar = true
+            $0.showLocationButton = true
             $0.showIndoorLevelPicker = true
         }
     }
-    
-    
-    
     
     func attribute() {
         paddingView.do {
@@ -68,10 +114,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             $0.leftViewMode = .always
             $0.delegate = self
         }
+        freeButton.do {
+            $0.backgroundColor = .white
+            $0.layer.cornerRadius = 10
+            $0.tintColor = .black
+            $0.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            $0.addTarget(self, action: #selector(freeButtonDipTap), for: .touchUpInside)
+        }
+    
+        
     }
     
     func layout() {
-        [ mapView, searchTextField ].forEach {
+        [ mapView, searchTextField, freeButton ].forEach {
             view.addSubview($0)
         }
         
@@ -99,6 +154,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             //높이
             $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
         }
+        freeButton.do {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 10).isActive = true
+            $0.centerXAnchor.constraint(equalTo: searchTextField.centerXAnchor).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        }
+    }
+    @objc func freeButtonDipTap() {
+        let searchResult = FSMResultMapView()
+        self.present(searchResult, animated: true)
     }
 }
 
@@ -114,4 +180,3 @@ extension ViewController: UITextFieldDelegate {
         self.present(mapSearchVC, animated: false)
     }
 }
-

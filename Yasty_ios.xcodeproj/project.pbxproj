@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7AC6CD2622C8F700CF854C /* FSMResultMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AC6CC2622C8F700CF854C /* FSMResultMapView.swift */; };
+		0B7AC6D1262AB2B700CF854C /* FSMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AC6D0262AB2B700CF854C /* FSMData.swift */; };
+		0B9DA4A2262D7DA6009AD0F2 /* HalfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DA4A1262D7DA6009AD0F2 /* HalfView.swift */; };
+		0B9DA4CE262DBFF8009AD0F2 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 0B9DA4CD262DBFF8009AD0F2 /* PanModal */; };
+		0B9DA4FF26345861009AD0F2 /* GetPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DA4FE26345861009AD0F2 /* GetPath.swift */; };
+		0B9DA50A2635BCEB009AD0F2 /* LocationPathResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DA5092635BCEB009AD0F2 /* LocationPathResult.swift */; };
 		0BF151E9260C99D000134495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF151E8260C99D000134495 /* AppDelegate.swift */; };
 		0BF151EB260C99D000134495 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF151EA260C99D000134495 /* SceneDelegate.swift */; };
 		0BF151ED260C99D000134495 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF151EC260C99D000134495 /* ViewController.swift */; };
@@ -21,10 +27,17 @@
 		0BF1522C260F9DDE00134495 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1522B260F9DDE00134495 /* Documents.swift */; };
 		0BF1522F260F9DFA00134495 /* TempKeywordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1522E260F9DFA00134495 /* TempKeywordResult.swift */; };
 		0BF152552617566C00134495 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF152542617566C00134495 /* SearchResultViewController.swift */; };
-		E07832FF5B7251240A8CD11A /* Pods_Yasty_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2926C0AA5BA16B6A8F75FE50 /* Pods_Yasty_ios.framework */; };
+		34218782B9212856E224E189 /* Pods_Yasty_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4098B080A2A982905DC58D /* Pods_Yasty_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B7AC6C22622BEB800CF854C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7AC6C62622BECF00CF854C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7AC6CC2622C8F700CF854C /* FSMResultMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSMResultMapView.swift; sourceTree = "<group>"; };
+		0B7AC6D0262AB2B700CF854C /* FSMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSMData.swift; sourceTree = "<group>"; };
+		0B9DA4A1262D7DA6009AD0F2 /* HalfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfView.swift; sourceTree = "<group>"; };
+		0B9DA4FE26345861009AD0F2 /* GetPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPath.swift; sourceTree = "<group>"; };
+		0B9DA5092635BCEB009AD0F2 /* LocationPathResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPathResult.swift; sourceTree = "<group>"; };
 		0BF151E5260C99D000134495 /* Yasty_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yasty_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF151E8260C99D000134495 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF151EA260C99D000134495 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +54,9 @@
 		0BF1522B260F9DDE00134495 /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
 		0BF1522E260F9DFA00134495 /* TempKeywordResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempKeywordResult.swift; sourceTree = "<group>"; };
 		0BF152542617566C00134495 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
-		2926C0AA5BA16B6A8F75FE50 /* Pods_Yasty_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yasty_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		29629C89DC366F10F3724349 /* Pods-Yasty_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.release.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.release.xcconfig"; sourceTree = "<group>"; };
-		D2925DE00873A1EBBFFA6689 /* Pods-Yasty_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.debug.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		45EBBC5903D68E71C2AD24BD /* Pods-Yasty_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.debug.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		8C4098B080A2A982905DC58D /* Pods_Yasty_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yasty_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4A903F75CC2A96B09AA822 /* Pods-Yasty_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.release.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +64,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E07832FF5B7251240A8CD11A /* Pods_Yasty_ios.framework in Frameworks */,
+				0B9DA4CE262DBFF8009AD0F2 /* PanModal in Frameworks */,
+				34218782B9212856E224E189 /* Pods_Yasty_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02DF7AEA660D6F1790F2385A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B7AC6C62622BECF00CF854C /* Realm.framework */,
+				0B7AC6C22622BEB800CF854C /* RealmSwift.framework */,
+				8C4098B080A2A982905DC58D /* Pods_Yasty_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0B7AC6CB2622C8D000CF854C /* FSM */ = {
+			isa = PBXGroup;
+			children = (
+				0B7AC6CC2622C8F700CF854C /* FSMResultMapView.swift */,
+				0B7AC6D0262AB2B700CF854C /* FSMData.swift */,
+			);
+			path = FSM;
+			sourceTree = "<group>";
+		};
+		0B9DA4F426344B73009AD0F2 /* route */ = {
+			isa = PBXGroup;
+			children = (
+				0B9DA4FE26345861009AD0F2 /* GetPath.swift */,
+				0B9DA5092635BCEB009AD0F2 /* LocationPathResult.swift */,
+			);
+			path = route;
+			sourceTree = "<group>";
+		};
 		0BF151DC260C99D000134495 = {
 			isa = PBXGroup;
 			children = (
 				0BF151E7260C99D000134495 /* Yasty_ios */,
 				0BF151E6260C99D000134495 /* Products */,
 				C3ABDA4D7EADE4CE19F5BB03 /* Pods */,
-				5A45E50AED5343147DD72775 /* Frameworks */,
+				02DF7AEA660D6F1790F2385A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +121,8 @@
 		0BF151E7260C99D000134495 /* Yasty_ios */ = {
 			isa = PBXGroup;
 			children = (
+				0B9DA4F426344B73009AD0F2 /* route */,
+				0B7AC6CB2622C8D000CF854C /* FSM */,
 				0BF152532617561300134495 /* SearchResultMapView */,
 				0BF15220260F9D7D00134495 /* Entity */,
 				0BF15218260F8DC300134495 /* MapSearch */,
@@ -118,23 +162,16 @@
 			isa = PBXGroup;
 			children = (
 				0BF152542617566C00134495 /* SearchResultViewController.swift */,
+				0B9DA4A1262D7DA6009AD0F2 /* HalfView.swift */,
 			);
 			path = SearchResultMapView;
-			sourceTree = "<group>";
-		};
-		5A45E50AED5343147DD72775 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2926C0AA5BA16B6A8F75FE50 /* Pods_Yasty_ios.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C3ABDA4D7EADE4CE19F5BB03 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D2925DE00873A1EBBFFA6689 /* Pods-Yasty_ios.debug.xcconfig */,
-				29629C89DC366F10F3724349 /* Pods-Yasty_ios.release.xcconfig */,
+				45EBBC5903D68E71C2AD24BD /* Pods-Yasty_ios.debug.xcconfig */,
+				BE4A903F75CC2A96B09AA822 /* Pods-Yasty_ios.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -146,17 +183,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BF151F9260C99D200134495 /* Build configuration list for PBXNativeTarget "Yasty_ios" */;
 			buildPhases = (
-				A130E73EA0A85426D348C31D /* [CP] Check Pods Manifest.lock */,
+				86736D6519EB5C961F2CF060 /* [CP] Check Pods Manifest.lock */,
 				0BF151E1260C99D000134495 /* Sources */,
 				0BF151E2260C99D000134495 /* Frameworks */,
 				0BF151E3260C99D000134495 /* Resources */,
-				E8ED82A2EEC1FAAAEF23E43E /* [CP] Embed Pods Frameworks */,
+				745BAE594EFC76DAE9E61A37 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Yasty_ios;
+			packageProductDependencies = (
+				0B9DA4CD262DBFF8009AD0F2 /* PanModal */,
+			);
 			productName = Yasty_ios;
 			productReference = 0BF151E5260C99D000134495 /* Yasty_ios.app */;
 			productType = "com.apple.product-type.application";
@@ -184,6 +224,9 @@
 				Base,
 			);
 			mainGroup = 0BF151DC260C99D000134495;
+			packageReferences = (
+				0B9DA4CC262DBFF8009AD0F2 /* XCRemoteSwiftPackageReference "PanModal" */,
+			);
 			productRefGroup = 0BF151E6260C99D000134495 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,7 +250,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A130E73EA0A85426D348C31D /* [CP] Check Pods Manifest.lock */ = {
+		745BAE594EFC76DAE9E61A37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86736D6519EB5C961F2CF060 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,23 +289,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8ED82A2EEC1FAAAEF23E43E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -255,11 +298,16 @@
 			files = (
 				0BF15222260F9D9B00134495 /* KeywordResult.swift in Sources */,
 				0BF151ED260C99D000134495 /* ViewController.swift in Sources */,
+				0B9DA4FF26345861009AD0F2 /* GetPath.swift in Sources */,
 				0BF1522F260F9DFA00134495 /* TempKeywordResult.swift in Sources */,
 				0BF1521E260F99A100134495 /* MapSearchDataManager.swift in Sources */,
 				0BF15229260F9DCD00134495 /* RegionInfo.swift in Sources */,
+				0B9DA50A2635BCEB009AD0F2 /* LocationPathResult.swift in Sources */,
+				0B9DA4A2262D7DA6009AD0F2 /* HalfView.swift in Sources */,
 				0BF15226260F9DB800134495 /* KeywordResultMeta.swift in Sources */,
 				0BF1521A260F8DD600134495 /* MapSearchViewController.swift in Sources */,
+				0B7AC6CD2622C8F700CF854C /* FSMResultMapView.swift in Sources */,
+				0B7AC6D1262AB2B700CF854C /* FSMData.swift in Sources */,
 				0BF151E9260C99D000134495 /* AppDelegate.swift in Sources */,
 				0BF152552617566C00134495 /* SearchResultViewController.swift in Sources */,
 				0BF1522C260F9DDE00134495 /* Documents.swift in Sources */,
@@ -407,7 +455,7 @@
 		};
 		0BF151FA260C99D200134495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2925DE00873A1EBBFFA6689 /* Pods-Yasty_ios.debug.xcconfig */;
+			baseConfigurationReference = 45EBBC5903D68E71C2AD24BD /* Pods-Yasty_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -427,7 +475,7 @@
 		};
 		0BF151FB260C99D200134495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29629C89DC366F10F3724349 /* Pods-Yasty_ios.release.xcconfig */;
+			baseConfigurationReference = BE4A903F75CC2A96B09AA822 /* Pods-Yasty_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -467,6 +515,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B9DA4CC262DBFF8009AD0F2 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B9DA4CD262DBFF8009AD0F2 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B9DA4CC262DBFF8009AD0F2 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0BF151DD260C99D000134495 /* Project object */;
 }

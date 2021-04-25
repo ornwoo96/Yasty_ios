@@ -9,6 +9,7 @@ target 'Yasty_ios' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'KakaoSDK'
+  pod 'RealmSwift'
+  pod 'MicrosoftMapsSDK', '~> 1.2.0'
   # Pods for Yasty_ios
-
 end

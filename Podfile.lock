@@ -35,14 +35,22 @@ PODS:
   - KakaoSDKUser (2.4.1):
     - KakaoSDKAuth (= 2.4.1)
     - KakaoSDKCommon (= 2.4.1)
+  - MicrosoftMapsSDK (1.2.0)
   - NMapsMap (3.11.0)
+  - Realm (10.7.2):
+    - Realm/Headers (= 10.7.2)
+  - Realm/Headers (10.7.2)
+  - RealmSwift (10.7.2):
+    - Realm (= 10.7.2)
   - SwiftyJSON (5.0.0)
   - Then (2.7.0)
 
 DEPENDENCIES:
   - Alamofire
   - KakaoSDK
+  - MicrosoftMapsSDK (~> 1.2.0)
   - NMapsMap
+  - RealmSwift
   - SwiftyJSON
   - Then
 
@@ -58,7 +66,10 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - MicrosoftMapsSDK
     - NMapsMap
+    - Realm
+    - RealmSwift
     - SwiftyJSON
     - Then
 
@@ -73,10 +84,13 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: 749828662e4ac7a9f17bb1664b58526da289d18c
   KakaoSDKTemplate: 8bb288765bfc0195631da809b2d707f09495acdf
   KakaoSDKUser: 11955811d99d1ff1f1dfd5428afe69937e31ccef
+  MicrosoftMapsSDK: c914b8c87b978d4665a00a5515bd35a43993429d
   NMapsMap: e6dbea85c2c195c7532deb637a5e90fd70f94fed
+  Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
+  RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 621e2af0be2f6fe2296bf946e497f424009c0a08
+PODFILE CHECKSUM: 7217263417c441d0c093e9bcf870d7db71d4f8b5
 
 COCOAPODS: 1.10.1

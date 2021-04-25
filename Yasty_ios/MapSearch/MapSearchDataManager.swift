@@ -19,11 +19,12 @@ class MapSearchDataManager {
         //헤더만들고
         let headers = HTTPHeaders(["Authorization": "KakaoAK 762a3af136ad539130b57950c6dc7772"])
         //파라미터 만들고(파라미터는 필요한게 있으면 계속해서 추가 - 사용자위치)
-        let parameters: Parameters = ["query": keyword, "category_group_code": "FD6"]
+        let parameters: Parameters = ["query": keyword, "category_group_code": "FD6","x": "127.12634832019361",
+                                      "y": "37.42006769755457",
+                                      "radius": "4000"]
         //뷰로보내주기전 미리만든 빈배열
         var keywordResult: [TempKeywordResult] = []
-        
-        
+    
         //쏜다
         AF.request(url,
                    method: .get,
@@ -35,14 +36,15 @@ class MapSearchDataManager {
                 case .success(let data):
                     // 성공일 때 일로 들어와서
                     let json = JSON(data)
-                    // 배열이야
+                    // 배열
                     let resultList = json["documents"]
                     for i in 0..<resultList.count {
                         let resultItem = TempKeywordResult(name: resultList[i]["place_name"].string ?? "",
                                                            x: Double(resultList[i]["x"].string ?? "") ?? 0.0,
                                                            y: Double(resultList[i]["y"].string ?? "") ?? 0.0)
                         if resultItem.name.isEmpty {
-                    // 비어있음
+                            // 비어있음
+                            print("비어있다 바부야!")
                         } else {
                             keywordResult.append(resultItem)
                         }

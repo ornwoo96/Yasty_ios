@@ -14,6 +14,7 @@ class MapSearchViewController: UIViewController {
     let searchResultTableView = UITableView()
     var searchList: [TempKeywordResult] = []
     let backButton = UIButton()
+    let mapViewButton = UIButton()
     
     
     override func viewDidLoad() {
@@ -59,12 +60,17 @@ class MapSearchViewController: UIViewController {
             $0.addTarget(self , action: #selector(backButtonDipTap), for: .touchUpInside)
             
         }
+        mapViewButton.do {
+            $0.tintColor = .black
+            $0.setImage(UIImage(systemName: "map.fill"), for: .normal)
+            $0.addTarget(self , action: #selector(mapViewButtonDipTap), for: .touchUpInside)
+        }
     }
     
     
     
     func layout() {
-        [ searchTextField, searchResultTableView, backButton].forEach { view.addSubview($0) }
+        [ searchTextField, searchResultTableView, backButton, mapViewButton ].forEach { view.addSubview($0) }
         
         searchTextField.do {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +81,7 @@ class MapSearchViewController: UIViewController {
             //백버튼 옆에 촥 달라 붙게 된다. backButton.trailingAnchor
             $0.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 10).isActive = true
             //오른쪽
-            $0.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+            $0.trailingAnchor.constraint(equalTo: mapViewButton.leadingAnchor).isActive = true
             //높이
             $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
         }
@@ -83,7 +89,7 @@ class MapSearchViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 10).isActive = true
             $0.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            $0.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            $0.trailingAnchor.constraint(equalTo: mapViewButton.leadingAnchor).isActive = true
             $0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         }
         
@@ -94,6 +100,14 @@ class MapSearchViewController: UIViewController {
             $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
             $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
         }
+        mapViewButton.do {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.centerYAnchor.constraint(equalTo: searchTextField.centerYAnchor).isActive = true
+            $0.leadingAnchor.constraint(equalTo: searchTextField.trailingAnchor, constant: 10).isActive = true
+            $0.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        }
     }
     @objc func backButtonDipTap() {
         //뒤로가기
@@ -101,6 +115,13 @@ class MapSearchViewController: UIViewController {
         //
         self.dismiss(animated: false)
     }
+    
+    @objc func mapViewButtonDipTap() {
+        let searchResult = SearchResultViewcontroller()
+        searchResult.receiveList = searchList
+        self.present(searchResult, animated: true)
+    }
+    
 }
 
 extension MapSearchViewController: UITextFieldDelegate {
@@ -126,9 +147,11 @@ extension MapSearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = searchList[indexPath.row].name
         return cell
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         searchTextField.endEditing(true)
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let searchResult = SearchResultViewcontroller()
         searchResult.receiveList = searchList
