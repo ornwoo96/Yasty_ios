@@ -8,18 +8,20 @@
 import Foundation
 import UIKit
 import PanModal
-
+import CoreLocation
 
 class HalfView: UIViewController {
     let paddingView = UIView()
     let freeButton = UIButton()
+    var dataManager = GetPath()
+    var latitude: Double?
+    var longitude: Double?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         attribute()
         layout()
-        
     }
     
     func attribute() {
@@ -34,17 +36,6 @@ class HalfView: UIViewController {
             $0.addTarget(self, action: #selector(freeButtonDipTap), for: .touchUpInside)
         }
     }
-    @objc func freeButtonDipTap() {
-        // 알림 경고창 띄우기
-        let alert = UIAlertController(title: "길찾기 기능",message: "길찾기 기능",preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in }
-        alert.addAction(okAction)
-        present(alert, animated: false, completion: nil)
-        //
-        let searchResult = FSMResultMapView()
-        self.present(searchResult, animated: true)
-    }
-    
     func layout() {
         [ freeButton ].forEach {
             view.addSubview($0)
@@ -56,6 +47,18 @@ class HalfView: UIViewController {
             $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
             $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
             $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        }
+    }
+    @objc func freeButtonDipTap() {
+        //처음 좌표는 출발지
+        //두번째 좌표는 도착지
+        dataManager.getPath(37.49835872305092, 127.02841392846841, 37.43405425816215, 127.08070370389675) { result in
+            let tempVC = WalkingRouteView()
+            tempVC.tempPathOverlay = result
+            
+            
+            self.present(tempVC, animated: true)
+            print(result)
         }
     }
 }

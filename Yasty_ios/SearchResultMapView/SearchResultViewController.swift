@@ -8,22 +8,47 @@
 import UIKit
 import NMapsMap
 import PanModal
+import CoreLocation
 
-class SearchResultViewcontroller: UIViewController {
+class SearchResultViewcontroller: UIViewController, CLLocationManagerDelegate {
     let mapView = NMFMapView()
     var receiveList: [TempKeywordResult]?
     let infoWindow = NMFInfoWindow()
     let defaultDataSource = NMFInfoWindowDefaultTextSource.data()
     let backButton = UIButton()
     let newView = UIView()
+    var dataManager = GetPath()
+    var locationManager: CLLocationManager!
+    
+    //위도와 경도
+    var latitude: Double?
+    var longitude: Double?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         attribute()
         layout()
         searchResultMarker()
+        // 현 위치 위도 경도 설정
+        let coor = locationManager?.location?.coordinate
+        latitude = coor?.latitude
+        longitude = coor?.longitude
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization() // when in use auth로 요청 등록
         
         
+        
+        
+    }
+    func getPath() {
+        dataManager.getPath(latitude ?? 0.0, longitude ?? 0.0, 37.43405425816215, 127.08070370389675) { result in
+            let tempVC = WalkingRouteView()
+            tempVC.tempPathOverlay = result
+            print(result)
+        }
     }
     
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
@@ -56,7 +81,11 @@ class SearchResultViewcontroller: UIViewController {
                         let halfView = HalfView()
                         self.presentPanModal(halfView)
                         
-
+                        // 루트 경로 데이터 보내기
+                        let coor = self.locationManager?.location?.coordinate
+                        self.latitude = coor?.latitude
+                        self.longitude = coor?.longitude
+                        self.getPath()
                         
                     } else {
                         // 이미 현재 마커에 정보 창이 열려있을 경우 닫음
@@ -69,7 +98,6 @@ class SearchResultViewcontroller: UIViewController {
         }
     }
     
-    
     func attribute() {
         mapView.moveCamera(
             NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: receiveList![0].y,lng: receiveList![0].x), zoom: 14)))
@@ -79,7 +107,6 @@ class SearchResultViewcontroller: UIViewController {
             $0.addTarget(self, action: #selector(backButtonDipTap), for: .touchUpInside)
         }
     }
-    
     
     func layout() {
         [mapView, backButton].forEach { view.addSubview($0) }
@@ -97,10 +124,9 @@ class SearchResultViewcontroller: UIViewController {
             $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
             $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
             $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
-            
         }
-        
     }
+    
     @objc func backButtonDipTap() {
         //뒤로가기
         //present 일때만 dismiss 이다

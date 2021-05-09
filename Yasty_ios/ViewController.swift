@@ -16,6 +16,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
     
     
+    
+    
     //let mapView2 = NMFMapView()
     let searchTextField = UITextField()
     let paddingView = UIView()
@@ -34,38 +36,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         layout()
         myLocation()
         
-        let pathOverlay = NMFPath()
-        pathOverlay.path = NMGLineString(points: [
-            NMGLatLng(lat: 37.57152, lng: 126.97714),
-            NMGLatLng(lat: 37.56607, lng: 126.98268),
-            NMGLatLng(lat: 37.56445, lng: 126.97707),
-            NMGLatLng(lat: 37.55855, lng: 126.97822)
-        ])
-        
-        pathOverlay.mapView = mapView2
-        
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization() // when in use auth로 요청 등록
-        //위치 권한 설정 확인
-//        //locationManager 인스턴스 생성 및 델리게이트 생성
-//        locationManager = CLLocationManager()
-//        locationManager.delegate = self
-//
-//        //포그라운드 상태에서 위치 추적 권한 요청
-//        locationManager.requestWhenInUseAuthorization()
-//
-//        //배터리에 맞게 권장되는 최적의 정확도
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//
-//        //위치업데이트
-//        locationManager.startUpdatingLocation()
-//
-//        //위도 경도 가져오기
-//        let coor = locationManager.location?.coordinate
-//        latitude = coor?.latitude
-//        longitude = coor?.longitude
+        
+        let coor = locationManager.location?.coordinate
+        latitude = coor?.latitude
+        longitude = coor?.longitude
                 
     }
     // state
