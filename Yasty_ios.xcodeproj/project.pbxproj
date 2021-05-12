@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0B61913C2647A61600479C87 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61913B2647A61600479C87 /* ContainerController.swift */; };
-		0B61913E2647A62C00479C87 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61913D2647A62C00479C87 /* HomeController.swift */; };
 		0B6191402647A64300479C87 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61913F2647A64300479C87 /* MenuController.swift */; };
 		0B6191432647CA9700479C87 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6191422647CA9700479C87 /* Protocols.swift */; };
 		0B6191462647D0DB00479C87 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6191452647D0DB00479C87 /* TabBar.swift */; };
 		0B61914A2647D3EC00479C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6191492647D3EC00479C87 /* Main.storyboard */; };
+		0B61914C2648092D00479C87 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61914B2648092D00479C87 /* MenuOptionCell.swift */; };
+		0B61914E264817C300479C87 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61914D264817C300479C87 /* MenuOption.swift */; };
+		0B61915226496E9A00479C87 /* Logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0B61915126496E9A00479C87 /* Logo.gif */; };
+		0B619154264A457000479C87 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B619153264A457000479C87 /* SettingView.swift */; };
 		0B7AC6CD2622C8F700CF854C /* FSMResultMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AC6CC2622C8F700CF854C /* FSMResultMapView.swift */; };
 		0B7AC6D1262AB2B700CF854C /* FSMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AC6D0262AB2B700CF854C /* FSMData.swift */; };
 		0B9DA4A2262D7DA6009AD0F2 /* HalfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DA4A1262D7DA6009AD0F2 /* HalfView.swift */; };
@@ -38,11 +41,14 @@
 
 /* Begin PBXFileReference section */
 		0B61913B2647A61600479C87 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
-		0B61913D2647A62C00479C87 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		0B61913F2647A64300479C87 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		0B6191422647CA9700479C87 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		0B6191452647D0DB00479C87 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		0B6191492647D3EC00479C87 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0B61914B2648092D00479C87 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		0B61914D264817C300479C87 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		0B61915126496E9A00479C87 /* Logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Logo.gif; path = ../../Logo.gif; sourceTree = "<group>"; };
+		0B619153264A457000479C87 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		0B7AC6C22622BEB800CF854C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7AC6C62622BECF00CF854C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7AC6CC2622C8F700CF854C /* FSMResultMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSMResultMapView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		0B6191382647A5DD00479C87 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B61914D264817C300479C87 /* MenuOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,6 +111,7 @@
 		0B6191392647A5E800479C87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0B61914B2648092D00479C87 /* MenuOptionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				0B61913B2647A61600479C87 /* ContainerController.swift */,
-				0B61913D2647A62C00479C87 /* HomeController.swift */,
+				0BF151EC260C99D000134495 /* ViewController.swift */,
 				0B61913F2647A64300479C87 /* MenuController.swift */,
 			);
 			path = Controller;
@@ -174,6 +182,7 @@
 		0BF151E7260C99D000134495 /* Yasty_ios */ = {
 			isa = PBXGroup;
 			children = (
+				0B61915126496E9A00479C87 /* Logo.gif */,
 				0B6191442647D09D00479C87 /* UITabBarController */,
 				0B6191412647CA8100479C87 /* Utils */,
 				0B61913A2647A5ED00479C87 /* Controller */,
@@ -186,11 +195,11 @@
 				0BF15218260F8DC300134495 /* MapSearch */,
 				0BF151E8260C99D000134495 /* AppDelegate.swift */,
 				0BF151EA260C99D000134495 /* SceneDelegate.swift */,
-				0BF151EC260C99D000134495 /* ViewController.swift */,
 				0BF151F1260C99D200134495 /* Assets.xcassets */,
 				0BF151F3260C99D200134495 /* LaunchScreen.storyboard */,
 				0BF151F6260C99D200134495 /* Info.plist */,
 				0B6191492647D3EC00479C87 /* Main.storyboard */,
+				0B619153264A457000479C87 /* SettingView.swift */,
 			);
 			path = Yasty_ios;
 			sourceTree = "<group>";
@@ -300,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B61914A2647D3EC00479C87 /* Main.storyboard in Resources */,
+				0B61915226496E9A00479C87 /* Logo.gif in Resources */,
 				0BF151F5260C99D200134495 /* LaunchScreen.storyboard in Resources */,
 				0BF151F2260C99D200134495 /* Assets.xcassets in Resources */,
 			);
@@ -355,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6191402647A64300479C87 /* MenuController.swift in Sources */,
+				0B61914E264817C300479C87 /* MenuOption.swift in Sources */,
 				0BF15222260F9D9B00134495 /* KeywordResult.swift in Sources */,
 				0B6191462647D0DB00479C87 /* TabBar.swift in Sources */,
 				0BF151ED260C99D000134495 /* ViewController.swift in Sources */,
@@ -371,10 +382,11 @@
 				0B7AC6D1262AB2B700CF854C /* FSMData.swift in Sources */,
 				0BF151E9260C99D000134495 /* AppDelegate.swift in Sources */,
 				0B9DA5262635CEE9009AD0F2 /* WalkingRouteView.swift in Sources */,
+				0B61914C2648092D00479C87 /* MenuOptionCell.swift in Sources */,
 				0BF152552617566C00134495 /* SearchResultViewController.swift in Sources */,
 				0BF1522C260F9DDE00134495 /* Documents.swift in Sources */,
+				0B619154264A457000479C87 /* SettingView.swift in Sources */,
 				0BF151EB260C99D000134495 /* SceneDelegate.swift in Sources */,
-				0B61913E2647A62C00479C87 /* HomeController.swift in Sources */,
 				0B61913C2647A61600479C87 /* ContainerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

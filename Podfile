@@ -11,5 +11,7 @@ target 'Yasty_ios' do
   pod 'KakaoSDK'
   pod 'RealmSwift'
   pod 'MicrosoftMapsSDK', '~> 1.2.0'
+  pod 'SwiftyGif'
+  pod 'Gifu'
   # Pods for Yasty_ios
 end

@@ -315,11 +315,11 @@ class FSMResultMapView: UIViewController {
     func attribute() {
         mapView.moveCamera(
             NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: 37.52811, lng: 126.96977), zoom: 10)))
-        backButton.do {
-            $0.tintColor = .black
-            $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-            $0.addTarget(self, action: #selector(backButtonDipTap), for: .touchUpInside)
-        }
+//        backButton.do {
+//            $0.tintColor = .black
+//            $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+//            $0.addTarget(self, action: #selector(backButtonDipTap), for: .touchUpInside)
+//        }
     }
     
     func layout() {
@@ -332,17 +332,17 @@ class FSMResultMapView: UIViewController {
             $0.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
             $0.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         }
-        backButton.do {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-            $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        }
+//        backButton.do {
+//            $0.translatesAutoresizingMaskIntoConstraints = false
+//            $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+//            $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//            $0.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        }
     }
-    @objc func backButtonDipTap() {
-        self.dismiss(animated: false)
-    }
+//    @objc func backButtonDipTap() {
+//        self.dismiss(animated: false)
+//    }
     @objc func infomation() {
         
     }

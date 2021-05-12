@@ -9,21 +9,23 @@ import UIKit
 import Then
 import NMapsMap
 import CoreLocation
+import Gifu
+import SwiftUI
 
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     //위치 매니저 변수
     var locationManager: CLLocationManager!
-    
-    
+    var delegate: HomeControllerDelegate?
     
     
     //let mapView2 = NMFMapView()
     let searchTextField = UITextField()
     let paddingView = UIView()
     let mapView = NMFNaverMapView()
-    let freeButton = UIButton()
     let mapView2 = NMFMapView()
+    let sideButton = UIButton()
+    let gifIamgeView = GIFImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     
     //위도와 경도
     var latitude: Double?
@@ -32,6 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+//        configureNavigationBar()
         attribute()
         layout()
         myLocation()
@@ -46,6 +49,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         longitude = coor?.longitude
                 
     }
+    
+    
     // state
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -83,28 +88,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             $0.layer.masksToBounds = true
             
             //테두리 (음영처리는 추가적으로)
-            $0.layer.borderWidth = 0.5
-            $0.layer.borderColor = UIColor.gray.cgColor
-            $0.placeholder = "맛집 키워드 검색 예) 냉면..."
+//            $0.layer.borderWidth = 0.5
+//            $0.layer.borderColor = UIColor.gray.cgColor
+            $0.placeholder = "맛집 키워드 검색"
+            $0.layer.shadowColor = UIColor.gray.cgColor
+            $0.layer.masksToBounds = false
+            $0.layer.shadowOffset = CGSize(width: 0, height: 4)
+            $0.layer.shadowRadius = 3
+            $0.layer.shadowOpacity = 0.3
             
             //레프트 뷰
             $0.leftView = paddingView
             $0.leftViewMode = .always
             $0.delegate = self
         }
-        freeButton.do {
-            $0.backgroundColor = .white
-            $0.layer.cornerRadius = 10
-            $0.tintColor = .black
-            $0.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            $0.addTarget(self, action: #selector(freeButtonDipTap), for: .touchUpInside)
+        sideButton.do {
+            $0.tintColor = .gray
+            $0.setImage(UIImage(systemName: "line.horizontal.3"), for: .normal)
+            $0.addTarget(self, action: #selector(handleMenuToggle), for: .touchUpInside)
         }
+    }
+    // MARK: - Handlers
     
-        
+    @objc func handleMenuToggle() {
+        delegate?.handleMenuToggle()
     }
     
     func layout() {
-        [ mapView, searchTextField, freeButton ].forEach {
+        [ mapView, searchTextField , sideButton ].forEach {
             view.addSubview($0)
         }
         
@@ -126,24 +137,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             //세이프에이리어 개념
             $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
             //왼쪽
-            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+            $0.leadingAnchor.constraint(equalTo: sideButton.trailingAnchor, constant: 10).isActive = true
             //오른쪽
             $0.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
             //높이
             $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
         }
-        freeButton.do {
+        
+        sideButton.do {
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 10).isActive = true
-            $0.centerXAnchor.constraint(equalTo: searchTextField.centerXAnchor).isActive = true
+            $0.centerYAnchor.constraint(equalTo: searchTextField.centerYAnchor).isActive = true
+            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
             $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
             $0.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            
+            
         }
+        
     }
-    @objc func freeButtonDipTap() {
-        let searchResult = FSMResultMapView()
-        self.present(searchResult, animated: true)
-    }
+    
 }
 
 extension ViewController: UITextFieldDelegate {

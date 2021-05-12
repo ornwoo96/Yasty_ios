@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - Gifu (3.3)
   - KakaoSDK (2.4.1):
     - KakaoSDKAuth (= 2.4.1)
     - KakaoSDKCommon (= 2.4.1)
@@ -42,21 +43,25 @@ PODS:
   - Realm/Headers (10.7.2)
   - RealmSwift (10.7.2):
     - Realm (= 10.7.2)
+  - SwiftyGif (5.4.0)
   - SwiftyJSON (5.0.0)
   - Then (2.7.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Gifu
   - KakaoSDK
   - MicrosoftMapsSDK (~> 1.2.0)
   - NMapsMap
   - RealmSwift
+  - SwiftyGif
   - SwiftyJSON
   - Then
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Gifu
     - KakaoSDK
     - KakaoSDKAuth
     - KakaoSDKCommon
@@ -70,11 +75,13 @@ SPEC REPOS:
     - NMapsMap
     - Realm
     - RealmSwift
+    - SwiftyGif
     - SwiftyJSON
     - Then
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Gifu: 97c2a3c3865fbc834ab13f797e2e8e7729a1853c
   KakaoSDK: 1e80d6877c0eac6a310f93c73fb15ca56c05f2bd
   KakaoSDKAuth: fcba1c9ede431683f5bdd84c835a96981cb115a5
   KakaoSDKCommon: 0912aa0c7db051ae8dc07a35395cf644f7728f95
@@ -88,9 +95,10 @@ SPEC CHECKSUMS:
   NMapsMap: e6dbea85c2c195c7532deb637a5e90fd70f94fed
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
+  SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 7217263417c441d0c093e9bcf870d7db71d4f8b5
+PODFILE CHECKSUM: c7c6c9af89f8d96ff24c97f6268ed3903f88ec2b
 
 COCOAPODS: 1.10.1

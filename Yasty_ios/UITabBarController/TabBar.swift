@@ -17,30 +17,19 @@ class TabBar: UITabBarController {
         setupVCs()
         
     }
-    fileprivate func createNavController(for rootViewController: UIViewController,
-                                                    image: UIImage) -> UIViewController {
+    fileprivate func createNavController(for rootViewController: UIViewController, image: UIImage) -> UIViewController {
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem.image = image
         navController.isNavigationBarHidden = true
         return navController
-      }
+    }
     func setupVCs() {
-            viewControllers = [
-                createNavController(for: ViewController(), image: UIImage(systemName: "magnifyingglass")!),
-                createNavController(for: FSMResultMapView(), image: UIImage(systemName: "heart.circle")!),
-                createNavController(for: ViewController(), image: UIImage(systemName: "gearshape")!)
-            ]
+        viewControllers = [
+            createNavController(for: ViewController(), image: UIImage(systemName: "magnifyingglass")!),
+            createNavController(for: FSMResultMapView(), image: UIImage(systemName: "heart.circle")!),
+            createNavController(for: SettingView(), image: UIImage(systemName: "gearshape")!)
+        ]
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
