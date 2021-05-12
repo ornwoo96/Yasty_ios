@@ -82,9 +82,6 @@ class SearchResultViewController: UIViewController, CLLocationManagerDelegate {
                         infoWindow.open(with: marker)
                         // 해당 마커 클릭시 카메라가 마커좌표로 이동
                         self.moveCamera(i)
-                        // panmodal 사용
-                        let halfView = HalfView()
-                        self.presentPanModal(halfView)
                         
                         // 루트 경로 데이터 보내기
                         let coor = self.locationManager?.location?.coordinate
@@ -92,7 +89,16 @@ class SearchResultViewController: UIViewController, CLLocationManagerDelegate {
                         self.longitude = coor?.longitude
                         
                         self.getPath(marker.userInfo["lat"] as! Double,
-                                     marker.userInfo["lat"] as! Double)
+                                     marker.userInfo["lng"] as! Double)
+                        
+                        let halfView = HalfView()
+                        // 여기서 값을 넘겨줘야됩
+                        halfView.startLat = self.latitude ?? 0.0
+                        halfView.startLng = self.longitude ?? 0.0
+                        halfView.endLat = marker.userInfo["lat"] as! Double
+                        halfView.endLng = marker.userInfo["lng"] as! Double
+                        
+                        self.presentPanModal(halfView)
                     } else {
                         // 이미 현재 마커에 정보 창이 열려있을 경우 닫음
                         infoWindow.close()

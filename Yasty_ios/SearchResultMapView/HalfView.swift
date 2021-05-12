@@ -14,8 +14,10 @@ class HalfView: UIViewController {
     let paddingView = UIView()
     let freeButton = UIButton()
     var dataManager = GetPath()
-    var latitude: Double?
-    var longitude: Double?
+    var startLat: Double = 0.0
+    var startLng: Double = 0.0
+    var endLat: Double = 0.0
+    var endLng: Double = 0.0
     
     
     override func viewDidLoad() {
@@ -52,11 +54,10 @@ class HalfView: UIViewController {
     @objc func freeButtonDipTap() {
         //처음 좌표는 출발지
         //두번째 좌표는 도착지
-        dataManager.getPath(37.49835872305092, 127.02841392846841, 37.43405425816215, 127.08070370389675) { result in
+        
+        dataManager.getPath(startLat, startLng, endLat, endLng) { result in
             let tempVC = WalkingRouteView()
             tempVC.tempPathOverlay = result
-            
-            
             self.present(tempVC, animated: true)
             print(result)
         }
