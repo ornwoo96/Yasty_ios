@@ -14,7 +14,6 @@
 		0B61914A2647D3EC00479C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6191492647D3EC00479C87 /* Main.storyboard */; };
 		0B61914C2648092D00479C87 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61914B2648092D00479C87 /* MenuOptionCell.swift */; };
 		0B61914E264817C300479C87 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61914D264817C300479C87 /* MenuOption.swift */; };
-		0B61915226496E9A00479C87 /* Logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0B61915126496E9A00479C87 /* Logo.gif */; };
 		0B619154264A457000479C87 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B619153264A457000479C87 /* SettingView.swift */; };
 		0B7AC6CD2622C8F700CF854C /* FSMResultMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AC6CC2622C8F700CF854C /* FSMResultMapView.swift */; };
 		0B7AC6D1262AB2B700CF854C /* FSMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AC6D0262AB2B700CF854C /* FSMData.swift */; };
@@ -37,6 +36,7 @@
 		0BF1522F260F9DFA00134495 /* TempKeywordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1522E260F9DFA00134495 /* TempKeywordResult.swift */; };
 		0BF152552617566C00134495 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF152542617566C00134495 /* SearchResultViewController.swift */; };
 		34218782B9212856E224E189 /* Pods_Yasty_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4098B080A2A982905DC58D /* Pods_Yasty_ios.framework */; };
+		CCA0C9FC264C1472002E2F7E /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = CCA0C9FB264C1472002E2F7E /* logo.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,6 @@
 		0B6191492647D3EC00479C87 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0B61914B2648092D00479C87 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		0B61914D264817C300479C87 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
-		0B61915126496E9A00479C87 /* Logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Logo.gif; path = ../../Logo.gif; sourceTree = "<group>"; };
 		0B619153264A457000479C87 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		0B7AC6C22622BEB800CF854C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7AC6C62622BECF00CF854C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +74,7 @@
 		45EBBC5903D68E71C2AD24BD /* Pods-Yasty_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.debug.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		8C4098B080A2A982905DC58D /* Pods_Yasty_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yasty_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4A903F75CC2A96B09AA822 /* Pods-Yasty_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yasty_ios.release.xcconfig"; path = "Target Support Files/Pods-Yasty_ios/Pods-Yasty_ios.release.xcconfig"; sourceTree = "<group>"; };
+		CCA0C9FB264C1472002E2F7E /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +182,7 @@
 		0BF151E7260C99D000134495 /* Yasty_ios */ = {
 			isa = PBXGroup;
 			children = (
-				0B61915126496E9A00479C87 /* Logo.gif */,
+				CCA0C9FB264C1472002E2F7E /* logo.gif */,
 				0B6191442647D09D00479C87 /* UITabBarController */,
 				0B6191412647CA8100479C87 /* Utils */,
 				0B61913A2647A5ED00479C87 /* Controller */,
@@ -309,7 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B61914A2647D3EC00479C87 /* Main.storyboard in Resources */,
-				0B61915226496E9A00479C87 /* Logo.gif in Resources */,
+				CCA0C9FC264C1472002E2F7E /* logo.gif in Resources */,
 				0BF151F5260C99D200134495 /* LaunchScreen.storyboard in Resources */,
 				0BF151F2260C99D200134495 /* Assets.xcassets in Resources */,
 			);
@@ -528,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DAG6F8V8UR;
+				DEVELOPMENT_TEAM = DH7PS64634;
 				INFOPLIST_FILE = Yasty_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
