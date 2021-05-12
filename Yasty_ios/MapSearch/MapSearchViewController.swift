@@ -117,7 +117,7 @@ class MapSearchViewController: UIViewController {
     }
     
     @objc func mapViewButtonDipTap() {
-        let searchResult = SearchResultViewcontroller()
+        let searchResult = SearchResultViewController()
         searchResult.receiveList = searchList
         self.present(searchResult, animated: true)
     }
@@ -153,8 +153,14 @@ extension MapSearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let searchResult = SearchResultViewcontroller()
+        
+        let searchResult = SearchResultViewController()
+        
+        // 어차피 필요함
         searchResult.receiveList = searchList
+        // 필요한 데이터
+        searchResult.selectedIndex = indexPath.row
+        
         self.present(searchResult, animated: true)
     }
 }

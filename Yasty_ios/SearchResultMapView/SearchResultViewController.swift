@@ -10,44 +10,48 @@ import NMapsMap
 import PanModal
 import CoreLocation
 
-class SearchResultViewcontroller: UIViewController, CLLocationManagerDelegate {
+class SearchResultViewController: UIViewController, CLLocationManagerDelegate {
     let mapView = NMFMapView()
     var receiveList: [TempKeywordResult]?
+    var selectedIndex: Int = 0
     let infoWindow = NMFInfoWindow()
     let defaultDataSource = NMFInfoWindowDefaultTextSource.data()
     let backButton = UIButton()
     let newView = UIView()
     var dataManager = GetPath()
     var locationManager: CLLocationManager!
-    
+        
     //위도와 경도
     var latitude: Double?
     var longitude: Double?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         attribute()
         layout()
-        searchResultMarker()
         // 현 위치 위도 경도 설정
         let coor = locationManager?.location?.coordinate
         latitude = coor?.latitude
         longitude = coor?.longitude
-        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization() // when in use auth로 요청 등록
-        
-        
-        
-        
     }
-    func getPath() {
-        dataManager.getPath(latitude ?? 0.0, longitude ?? 0.0, 37.43405425816215, 127.08070370389675) { result in
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // 타이밍 이슈 해결
+        // 뷰컨트롤러 라이프사이클 매우 중요
+        searchResultMarker()
+    }
+    
+    func getPath(_ targetLat: Double,
+                 _ targetLong: Double) {
+        dataManager.getPath(latitude ?? 0.0,
+                            longitude ?? 0.0,
+                            targetLat,
+                            targetLong) { result in
             let tempVC = WalkingRouteView()
             tempVC.tempPathOverlay = result
-            print(result)
         }
     }
     
@@ -55,28 +59,29 @@ class SearchResultViewcontroller: UIViewController, CLLocationManagerDelegate {
         infoWindow.close()
     }
 
-    
     func searchResultMarker() {
+        self.moveCamera(self.selectedIndex)
+        
         for i in 0..<receiveList!.count {
-            let marker = NMFMarker(position: NMGLatLng(lat: receiveList![i].y, lng: receiveList![i].x))
+            let marker = NMFMarker(
+                position: NMGLatLng(lat: receiveList![i].y,
+                                    lng: receiveList![i].x))
             marker.mapView = mapView
+            marker.userInfo.updateValue(receiveList![i].y, forKey: "lat")
+            marker.userInfo.updateValue(receiveList![i].x, forKey: "lng")
             let infoWindow = NMFInfoWindow()
             let dataSource = NMFInfoWindowDefaultTextSource.data()
             dataSource.title = receiveList![i].name
             infoWindow.dataSource = dataSource
-            infoWindow.close()
             
             // 마커를 탭하면:
             let handler = { (overlay: NMFOverlay) -> Bool in
                 if let marker = overlay as? NMFMarker {
                     if marker.infoWindow == nil {
-                        
                         // 현재 마커에 정보 창이 열려있지 않을 경우 엶
                         infoWindow.open(with: marker)
                         // 해당 마커 클릭시 카메라가 마커좌표로 이동
-                        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: self.receiveList![i].y, lng: self.receiveList![i].x))
-                        self.mapView.moveCamera(cameraUpdate)
-                        
+                        self.moveCamera(i)
                         // panmodal 사용
                         let halfView = HalfView()
                         self.presentPanModal(halfView)
@@ -85,17 +90,25 @@ class SearchResultViewcontroller: UIViewController, CLLocationManagerDelegate {
                         let coor = self.locationManager?.location?.coordinate
                         self.latitude = coor?.latitude
                         self.longitude = coor?.longitude
-                        self.getPath()
                         
+                        self.getPath(marker.userInfo["lat"] as! Double,
+                                     marker.userInfo["lat"] as! Double)
                     } else {
                         // 이미 현재 마커에 정보 창이 열려있을 경우 닫음
                         infoWindow.close()
                     }
                 }
                 return true
-            };
+            }
             marker.touchHandler = handler
         }
+    }
+    
+    func moveCamera(_ index: Int) {
+        let cameraUpdate = NMFCameraUpdate(
+            scrollTo: NMGLatLng(lat: self.receiveList![index].y,
+                                lng: self.receiveList![index].x))
+        self.mapView.moveCamera(cameraUpdate)
     }
     
     func attribute() {
@@ -133,5 +146,3 @@ class SearchResultViewcontroller: UIViewController, CLLocationManagerDelegate {
         self.dismiss(animated: false)
     }
 }
-
-
